@@ -21,6 +21,7 @@ import { ROLE_ACCENT_COLORS, ROLE_ICONS, ROLE_SHORT_LABELS, ROLE_LABELS } from "
 const roleMenus: Record<RoleSlug, MenuItem[]> = {
   president: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/president' },
+    { label: 'Conseils Concurrents', icon: 'Lightbulb', href: '/president/advice-competitors' },
     { label: 'GreenMetric', icon: 'TreePine', href: '/president/greenmetric' },
     { label: 'Classements', icon: 'TrendingUp', href: '/president/rankings' },
     { label: 'Conformité ISO', icon: 'BadgeCheck', href: '/president/compliance' },
