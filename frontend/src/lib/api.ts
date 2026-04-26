@@ -5,7 +5,7 @@
 
 import { useStore } from './store'
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1'
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://enstab.onrender.com/api/v1'
 
 class ApiError extends Error {
   status: number
