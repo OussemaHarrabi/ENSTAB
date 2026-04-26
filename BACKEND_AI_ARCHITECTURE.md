@@ -208,6 +208,10 @@ backend/
 
 ## 4. SUPABASE DATABASE SCHEMA
 
+### STEP 0: Enable Vector Extension (Dashboard)
+**Before running any SQL**, go to Supabase Dashboard → **Database** → **Extensions** → search `vector` → click **Enable**.
+This MUST be done first or pgvector SQL will fail.
+
 ### Execute this SQL in Supabase SQL Editor (copy-paste):
 
 ```sql
@@ -215,10 +219,10 @@ backend/
 -- UCAR INTELLIGENCE PLATFORM — COMPLETE SUPABASE SCHEMA
 -- ================================================================
 
--- Enable extensions
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS "pgvector";
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+-- Enable extensions (vector must be enabled from Dashboard first!)
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp" WITH SCHEMA extensions;
+CREATE EXTENSION IF NOT EXISTS vector WITH SCHEMA extensions;
+CREATE EXTENSION IF NOT EXISTS "pgcrypto" WITH SCHEMA extensions;
 
 -- ─── ROLES & PERMISSIONS ───
 
