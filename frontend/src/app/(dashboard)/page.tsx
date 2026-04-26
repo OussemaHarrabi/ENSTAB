@@ -3,14 +3,19 @@
 import { redirect } from "next/navigation"
 import { useEffect } from "react"
 import { useStore } from "@/lib/store"
+import type { RoleSlug } from "@/lib/types"
+import { ROLE_ROUTE_PREFIX } from "@/lib/types"
 
 export default function DashboardRedirect() {
-  const { currentRole } = useStore()
-  const roleRoutes: Record<string, string> = {
-    hq_super_admin: '/hq', hq_dept_head: '/hq-domain/academic', hq_staff: '/hq-staff/academic',
-    inst_admin: '/institution', inst_dept_head: '/inst-dept/academic', inst_staff: '/inst-staff/academic',
-    teacher: '/teacher', student: '/student',
-  }
-  useEffect(() => { redirect(roleRoutes[currentRole] || '/hq') }, [currentRole])
+  const { currentRole, isAuthenticated } = useStore()
+
+  useEffect(() => {
+    if (!isAuthenticated || !currentRole) {
+      redirect('/login')
+    }
+    const target = ROLE_ROUTE_PREFIX[currentRole] || '/president'
+    redirect(target)
+  }, [currentRole, isAuthenticated])
+
   return null
 }
