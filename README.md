@@ -23,37 +23,9 @@ Plateforme de gestion intelligente centralisant les données des 12 établisseme
 
 ## 🏗 Architecture
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                    FRONTEND (Next.js 16)                         │
-│                    141 routes · 14 roles                         │
-│                    http://localhost:3000                          │
-└──────────────────────────┬───────────────────────────────────────┘
-                           │ HTTPS / REST API
-                           ▼
-┌──────────────────────────────────────────────────────────────────┐
-│                    BACKEND (FastAPI · Python 3.11)                │
-│                    80+ endpoints · JWT Auth · RBAC                │
-│                    http://localhost:8000                           │
-│                                                                   │
-│  ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌──────────────┐  │
-│  │ API Auth   │ │ Services   │ │ AI Engine  │ │ Document     │  │
-│  │ Routes     │ │ (11 svc)   │ │ (Groq·HF)  │ │ Ingestion    │  │
-│  └────────────┘ └────────────┘ └────────────┘ └──────────────┘  │
-└──────────────────────────┬───────────────────────────────────────┘
-                           │
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-┌─────────────────┐ ┌──────────┐ ┌──────────────┐
-│   Supabase      │ │  Redis   │ │  Groq API    │
-│  PostgreSQL 15  │ │ (Cache)  │ │ (LLM)        │
-│  + pgvector     │ │          │ │              │
-│  + Storage      │ │          │ │  HuggingFace │
-│  (bucket:unicar)│ │          │ │ (Embeddings) │
-└─────────────────┘ └──────────┘ └──────────────┘
-```
+<img width="6187" height="8192" alt="User Access   API Gateway-2026-04-26-082008" src="https://github.com/user-attachments/assets/5c2f48d8-9387-4ed4-b7d8-a3bb7a519085" />
 
----
+
 
 ## 🧩 Modules & Fonctionnalités
 
