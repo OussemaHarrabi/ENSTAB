@@ -29,12 +29,13 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
     { label: 'Anomalies IA', icon: 'ShieldAlert', href: '/president/anomalies', badge: 5 },
     { label: 'Appels d\'Offres', icon: 'ScrollText', href: '/president/appels-offres' },
     { label: 'Institutions', icon: 'Building2', href: '/president/institutions' },
-    { label: 'Comparaisons', icon: 'BarChart3', href: '/president/comparaisons' },
     { label: 'Services UCAR', icon: 'Users', href: '/president/services' },
     { label: 'Utilisateurs', icon: 'UserCog', href: '/president/utilisateurs' },
     { label: 'Rapports', icon: 'FileText', href: '/president/rapports' },
     { label: 'Chat IA', icon: 'MessageSquare', href: '/president/chat' },
-  ],
+    { label: 'Comparaisons', icon: 'BarChart3', href: '/president/comparaisons' },
+      { label: 'Conseils Concurrents', icon: 'Lightbulb', href: '/president/advice-competitors' }
+  ]
   svc_secretaire: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/sg' },
     { label: 'Challenge Inter-Universités', icon: 'Trophy', href: '/sg/challenge-inter-universites' },
@@ -107,9 +108,9 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
     { label: 'Allocations', icon: 'Wallet', href: '/budget/allocations' },
     { label: 'Exécution', icon: 'Activity', href: '/budget/execution' },
     { label: 'Prévisions', icon: 'TrendingUp', href: '/budget/previsions' },
-    { label: 'Comparaisons', icon: 'BarChart3', href: '/budget/comparaisons' },
     { label: 'Rapports', icon: 'FileText', href: '/budget/rapports' },
     { label: 'Chat IA', icon: 'MessageSquare', href: '/budget/chat' },
+    { label: 'Comparaisons', icon: 'BarChart3', href: '/budget/comparaisons' },
   ],
   svc_juridique: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/juridique' },
@@ -128,9 +129,9 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
     { label: 'Réussite', icon: 'TrendingUp', href: '/academique/reussite' },
     { label: 'Calendrier', icon: 'CalendarDays', href: '/academique/calendrier' },
     { label: 'Vie Étudiante', icon: 'Megaphone', href: '/academique/vie-etudiante' },
-    { label: 'Comparaisons', icon: 'BarChart3', href: '/academique/comparaisons' },
     { label: 'Rapports', icon: 'FileText', href: '/academique/rapports' },
     { label: 'Chat IA', icon: 'MessageSquare', href: '/academique/chat' },
+    { label: 'Comparaisons', icon: 'BarChart3', href: '/academique/comparaisons' },
   ],
   svc_recherche: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/recherche' },
@@ -139,9 +140,9 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
     { label: 'Coopération', icon: 'Handshake', href: '/recherche/cooperation' },
     { label: 'Doctorants', icon: 'Cap', href: '/recherche/doctorants' },
     { label: 'Classements', icon: 'TrendingUp', href: '/recherche/classements' },
-    { label: 'Comparaisons', icon: 'BarChart3', href: '/recherche/comparaisons' },
     { label: 'Rapports', icon: 'FileText', href: '/recherche/rapports' },
     { label: 'Chat IA', icon: 'MessageSquare', href: '/recherche/chat' },
+    { label: 'Comparaisons', icon: 'BarChart3', href: '/recherche/comparaisons' },
   ],
   teacher: [
     { label: 'Mes Cours', icon: 'Home', href: '/teacher' },

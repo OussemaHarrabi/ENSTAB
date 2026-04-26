@@ -1,0 +1,42 @@
+# Python environments and local settings
+.venv/
+venv/
+.env
+.env.local
+*.env
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.pytype/
+.mypy_cache/
+
+# Tooling/runtime artifacts
+.mcp-cache/
+.playwright/
+*.log
+logs/
+
+# Generated ranking/scraping outputs
+data/competitor_profiles.json
+data/ranking_latest.xlsx
+data/ranking_latest.md5
+reports/latest_report.json
+reports/ucar_ranking_report_*.json
+reports/ucar_ranking_report_*.md
+
+# Excel and OS files
+*.xlsx
+*.xls
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
