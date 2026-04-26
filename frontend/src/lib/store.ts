@@ -2,36 +2,44 @@ import { create } from 'zustand'
 import type { User, RoleSlug } from './types'
 import { authenticateUser } from './mock-users'
 
+export interface SessionData {
+  currentUser: User | null
+  currentRole: RoleSlug | null
+  token: string | null
+}
+
 interface AppState {
   currentUser: User | null
   currentRole: RoleSlug | null
+  token: string | null
   sidebarCollapsed: boolean
   language: 'fr'
   isAuthenticated: boolean
   login: (email: string, password: string) => { success: boolean; error?: string }
+  setAuthFromApi: (token: string, user: User, role: RoleSlug) => void
   logout: () => void
   toggleSidebar: () => void
 }
 
-function loadSession(): { currentUser: User | null; currentRole: RoleSlug | null } {
-  if (typeof window === 'undefined') return { currentUser: null, currentRole: null }
+function loadSession(): SessionData {
+  if (typeof window === 'undefined') return { currentUser: null, currentRole: null, token: null }
   try {
     const stored = localStorage.getItem('ucar_session')
     if (stored) {
       const parsed = JSON.parse(stored)
       if (parsed.currentUser && parsed.currentRole) {
-        return parsed
+        return parsed as SessionData
       }
     }
   } catch {}
-  return { currentUser: null, currentRole: null }
+  return { currentUser: null, currentRole: null, token: null }
 }
 
-function saveSession(user: User | null, role: RoleSlug | null) {
+function saveSession(data: SessionData) {
   if (typeof window === 'undefined') return
   try {
-    if (user && role) {
-      localStorage.setItem('ucar_session', JSON.stringify({ currentUser: user, currentRole: role }))
+    if (data.currentUser && data.currentRole) {
+      localStorage.setItem('ucar_session', JSON.stringify(data))
     } else {
       localStorage.removeItem('ucar_session')
     }
@@ -43,6 +51,7 @@ const initial = loadSession()
 export const useStore = create<AppState>((set) => ({
   currentUser: initial.currentUser,
   currentRole: initial.currentRole,
+  token: initial.token,
   sidebarCollapsed: false,
   language: 'fr',
   isAuthenticated: initial.currentUser !== null,
@@ -52,14 +61,26 @@ export const useStore = create<AppState>((set) => ({
     if (!user) {
       return { success: false, error: 'Email ou mot de passe incorrect. Contactez votre chef de service.' }
     }
-    set({ currentUser: user, currentRole: user.role, isAuthenticated: true })
-    saveSession(user, user.role)
+    const session: SessionData = {
+      currentUser: user,
+      currentRole: user.role,
+      token: `mock-token-${Date.now()}`
+    }
+    set({ ...session, isAuthenticated: true })
+    saveSession(session)
     return { success: true }
   },
 
+  setAuthFromApi: (token: string, user: User, role: RoleSlug) => {
+    const session: SessionData = { currentUser: user, currentRole: role, token }
+    set({ ...session, isAuthenticated: true })
+    saveSession(session)
+  },
+
   logout: () => {
-    set({ currentUser: null, currentRole: null, isAuthenticated: false })
-    saveSession(null, null)
+    const empty: SessionData = { currentUser: null, currentRole: null, token: null }
+    set({ ...empty, isAuthenticated: false })
+    saveSession(empty)
   },
 
   toggleSidebar: () => set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
