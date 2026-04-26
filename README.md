@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/9a823f1f-f7d1-43ab-8dc4-2b533a48e356
+
 # 🎓 UCAR Intelligence Platform
 
 **Université de Carthage — Hack4UCAR 2025**
@@ -20,6 +24,10 @@ Plateforme de gestion intelligente centralisant les données des 12 établisseme
 10. [Équipe](#-équipe)
 
 ---
+## Landing Page
+
+https://github.com/user-attachments/assets/9a823f1f-f7d1-43ab-8dc4-2b533a48e356
+--
 
 ## 🏗 Architecture
 
