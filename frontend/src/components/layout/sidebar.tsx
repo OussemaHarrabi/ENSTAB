@@ -9,7 +9,7 @@ import {
   Crown, Monitor, Calculator, Scale, School, FlaskConical, BookMarked, User,
   BellRing, GanttChart, ScrollText, Handshake, Activity, BadgeCheck,
   PieChart, TrendingUp, AlertTriangle, ClipboardList, UsersRound,
-  CalendarDays, GraduationCap as Cap, Globe, Lightbulb
+  CalendarDays, GraduationCap as Cap, Globe, Lightbulb, Trophy
 } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -21,6 +21,7 @@ import { ROLE_ACCENT_COLORS, ROLE_ICONS, ROLE_SHORT_LABELS, ROLE_LABELS } from "
 const roleMenus: Record<RoleSlug, MenuItem[]> = {
   president: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/president' },
+    { label: 'Challenge Inter-Universités', icon: 'Trophy', href: '/president/challenge-inter-universites' },
     { label: 'GreenMetric', icon: 'TreePine', href: '/president/greenmetric' },
     { label: 'Classements', icon: 'TrendingUp', href: '/president/rankings' },
     { label: 'Conformité ISO', icon: 'BadgeCheck', href: '/president/compliance' },
@@ -36,6 +37,7 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
   ],
   svc_secretaire: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/sg' },
+    { label: 'Challenge Inter-Universités', icon: 'Trophy', href: '/sg/challenge-inter-universites' },
     { label: 'Courrier', icon: 'ScrollText', href: '/sg/courrier' },
     { label: 'Décisions', icon: 'FileText', href: '/sg/decisions' },
     { label: 'Réunions', icon: 'CalendarDays', href: '/sg/reunions' },
@@ -120,6 +122,7 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
   ],
   svc_academique: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/academique' },
+    { label: 'Challenge Inter-Universités', icon: 'Trophy', href: '/academique/challenge-inter-universites' },
     { label: 'Programmes', icon: 'BookOpen', href: '/academique/programmes' },
     { label: ' inscriptions', icon: 'Users', href: '/academique/inscriptions' },
     { label: 'Réussite', icon: 'TrendingUp', href: '/academique/reussite' },
@@ -206,6 +209,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Cap: <Cap size={18} />,
   Globe: <Globe size={18} />,
   Lightbulb: <Lightbulb size={18} />,
+  Trophy: <Trophy size={18} />,
 }
 
 export function Sidebar() {

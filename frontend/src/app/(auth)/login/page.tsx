@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useStore } from "@/lib/store"
 import { useRouter } from "next/navigation"
-import { ROLE_ROUTE_PREFIX, ROLE_ACCENT_COLORS } from "@/lib/types"
+import { ROLE_ROUTE_PREFIX } from "@/lib/types"
 import { Building2, LogIn, AlertCircle, Eye, EyeOff } from "lucide-react"
 
 export default function LoginPage() {
@@ -170,6 +170,7 @@ export default function LoginPage() {
               </button>
             </div>
           </div>
+
         </div>
 
         {/* Footer */}
