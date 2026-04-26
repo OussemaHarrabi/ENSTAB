@@ -1,0 +1,14 @@
+requests
+beautifulsoup4
+selenium
+playwright
+anthropic
+groq
+pandas
+openpyxl
+lxml
+mcp
+httpx
+aiohttp
+python-dotenv
+apscheduler
