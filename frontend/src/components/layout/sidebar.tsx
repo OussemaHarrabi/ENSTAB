@@ -21,7 +21,7 @@ import { ROLE_ACCENT_COLORS, ROLE_ICONS, ROLE_SHORT_LABELS, ROLE_LABELS } from "
 const roleMenus: Record<RoleSlug, MenuItem[]> = {
   president: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/president' },
-    { label: 'Conseils Concurrents', icon: 'Lightbulb', href: '/president/advice-competitors' },
+    { label: 'Challenge Inter-Universités', icon: 'Trophy', href: '/president/challenge-inter-universites' },
     { label: 'GreenMetric', icon: 'TreePine', href: '/president/greenmetric' },
     { label: 'Classements', icon: 'TrendingUp', href: '/president/rankings' },
     { label: 'Conformité ISO', icon: 'BadgeCheck', href: '/president/compliance' },
@@ -34,7 +34,8 @@ const roleMenus: Record<RoleSlug, MenuItem[]> = {
     { label: 'Rapports', icon: 'FileText', href: '/president/rapports' },
     { label: 'Chat IA', icon: 'MessageSquare', href: '/president/chat' },
     { label: 'Comparaisons', icon: 'BarChart3', href: '/president/comparaisons' },
-  ],
+      { label: 'Conseils Concurrents', icon: 'Lightbulb', href: '/president/advice-competitors' }
+  ]
   svc_secretaire: [
     { label: 'Tableau de Bord', icon: 'Home', href: '/sg' },
     { label: 'Courrier', icon: 'ScrollText', href: '/sg/courrier' },
